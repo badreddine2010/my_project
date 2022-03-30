@@ -15,6 +15,16 @@
         {% endblock %}
     </head>
     <body>
+    {% block header %}
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        {# ... #}
+        <div class="navbar-nav">
+            <a href="{{ path('cart') }}" class="btn btn-light">
+                Cart
+            </a>
+        </div>
+    </nav>
+{% endblock %}
         {% block body %}{% endblock %}
     </body>
 </html>

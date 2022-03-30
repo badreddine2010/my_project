@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use Webmozart\Assert\Assert;
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\OrderItemRepository;
-use Webmozart\Assert\Assert\Assert\NotBlank;
-use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+// use Webmozart\Assert\Assert\Assert\NotBlank;
+// use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 
 /**
  * @ORM\Entity(repositoryClass=OrderItemRepository::class)
@@ -28,6 +29,8 @@ class OrderItem
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(1)
      */
     private $quantity;
 
